@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+    <script>
+            $(document).ready(function () {
+
+                $("#ddl").click(function () {                   
+                    $.ajax({
+                        type: "GET",
+                        url: "api/Employee/GetDetails",
+                        contentType: "application/Json; charset=utf-8",
+                        //data: { VehicalId: Vehicle_Id},
+                        dataType: "Json",
+                        success: function (data) {
+
+                            $("#Slot").empty().append(data);
+                        },
+                        error: function ajaxError(response) {
+                            alert(response.status + ' ' + response.statusText);
+                        }
+                    });
+
+                });
+
+
+            });
+
+
+    </script>
+<h2>Index</h2>
+<div>
+    <button id="ddl"> </button>
+</div>
+

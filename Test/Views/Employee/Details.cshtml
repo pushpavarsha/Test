@@ -1,0 +1,38 @@
+﻿@model List<Test.Models.Employee>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                NAME
+            </td>
+            <td>
+                Marks1
+            </td>   
+            <td>
+                Marks2
+            </td>
+        </tr>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Marks1</td>
+            <td>@item.marks2</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<form class="form-check-inline" action="/Employee/search" method="post">
+    <input type="search" class="form-control mr-1" id="search" name="search" placeholder="Search" />
+    <button type="submit">Go</button>
+</form>

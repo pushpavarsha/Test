@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Test.Models.Employee>
+
+@{
+    ViewBag.Title = "EmpDetails";
+}
+
+<h2>EmpDetails</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marks1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marks2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Marks1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.marks2)
+    </td>
+
+</tr>
+}
+
+</table>
+<form class="form-check-inline" action="/Employee/search" method="post">
+    <input type="search" class="form-control mr-1" id="search" name="search" placeholder="Search" />
+    <button type="submit">Go</button>
+</form>
