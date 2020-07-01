@@ -13,7 +13,7 @@ namespace EmployeeService.Controllers
     {
         [Authorize]
         [HttpGet]
-        public IEnumerable<Employee>  GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
             using(ABCEntities db = new ABCEntities())
             {
